@@ -1,4 +1,4 @@
-import { Template } from "./type";
+import { Template } from './type';
 
 export const VITE_REACT_TEMPLATE: Template = {
   files: {
@@ -81,5 +81,11 @@ root.render(
     },
   },
   entry: 'App.jsx',
-  visibleFiles: ['App.jsx', 'index.jsx', 'index.html'],
+  visibleFiles: [
+    'App.jsx',
+    'index.jsx',
+    'index.html',
+    'package.json',
+    'vite.config.js',
+  ],
 };
