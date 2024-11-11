@@ -25,7 +25,8 @@
     "@xterm/xterm": "^5.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-resizable-panels": "^2.0.16"
+    "react-resizable-panels": "^2.0.16",
+    "xterm-addon-fit": "^0.8.0"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

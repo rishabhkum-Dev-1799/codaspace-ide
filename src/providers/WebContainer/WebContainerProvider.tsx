@@ -23,8 +23,9 @@ export default function WebContainerProvider({
     let webContainerInstance: WebContainer | null = null;
     const initWebContainer = async () => {
       try {
+        // This is the first step we need to boot the server ie the webcontainer isntance
         webContainerInstance = await WebContainer.boot();
-        // TODO
+        // Then we need to mount the files which will  be served to the server
         await webContainerInstance.mount(template.files);
         setWebContainer(webContainerInstance);
       } catch (e) {
