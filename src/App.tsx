@@ -3,6 +3,7 @@ import { CodeEditor } from './components/CodeEditor';
 
 import WebContainerProvider from './providers/WebContainer/WebContainerProvider';
 import { VITE_REACT_TEMPLATE } from './templates/react-vite';
+import { Terminal } from './components/terminal';
 export default function App() {
   return (
     <WebContainerProvider template={VITE_REACT_TEMPLATE}>
@@ -16,8 +17,10 @@ export default function App() {
                 </div>
               </Panel>
               <PanelResizeHandle className="h-2 bg-white" />
-              <Panel className="rounded-[10px] border border-gray-500 p-2">
-                <div className="h-full bg-primary p-2">Console</div>
+              <Panel className="rounded-[10px] border border-gray-500 ">
+                <div className="h-full bg-primary py-[10px]">
+                  <Terminal />
+                </div>
               </Panel>
               <PanelResizeHandle className="h-2  " />
             </PanelGroup>
