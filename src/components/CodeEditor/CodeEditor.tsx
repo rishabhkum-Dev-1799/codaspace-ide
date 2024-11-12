@@ -4,8 +4,10 @@ import { Editor } from '@monaco-editor/react';
 import { VITE_REACT_TEMPLATE } from '../../templates/react-vite';
 import FileTabs from './FileTabs';
 import { getLanguageFromFileName } from './getLanguageFromFileName';
+import useWebContainer from '../../providers/WebContainer';
 
 function CodeEditor() {
+  const {webContainer} = useWebContainer();
   const [activeFile, setActiveFile] = useState<string>(
     VITE_REACT_TEMPLATE.entry,
   );
@@ -16,6 +18,11 @@ function CodeEditor() {
   const onFileChange = (fileName: string) => {
     setActiveFile(() => fileName);
   };
+
+  const onhandleCodeChange = async(content:string)=>{
+      if (!webContainer) return;
+      await webContainer.fs.writeFile(activeFile,content)
+  }
   return (
     <div className="h-full ">
       <FileTabs
@@ -26,6 +33,7 @@ function CodeEditor() {
       <Editor
         theme="vs-dark"
         path={activeFile}
+        onChange={value=>onhandleCodeChange(value)}
         defaultValue={currentFile?.file?.contents as string}
         defaultLanguage={getLanguageFromFileName(activeFile)}
       />

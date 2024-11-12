@@ -50,7 +50,7 @@ const Terminal = () => {
     // handling the webcontainer instance
     const startShell = async () => {
       // Here we are using spawn to start the rserver process we also provides us the shell type it should start along with providing terminal size as the extra parameters
-      const shellProcess = await webContainer.spawn('bash', [], {
+      const shellProcess = await webContainer.spawn('jsh', [], {
         terminal: {
           cols: terminal.cols,
           rows: terminal.rows,

@@ -84,8 +84,6 @@ root.render(
   visibleFiles: [
     'App.jsx',
     'index.jsx',
-    'index.html',
-    'package.json',
-    'vite.config.js',
+    'index.html'
   ],
 };
